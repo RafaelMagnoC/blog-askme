@@ -42,6 +42,7 @@ asks.get("/ask/:id", (req, res) => {
         order: [["updatedAt", "DESC"]],
       }).then(resposta => {
         res.render("asks/ask", {
+          id: pergunta.id,
           updatedAt: pergunta.updatedAt,
           tituloPergunta: pergunta.tituloPergunta,
           descricaoPergunta: pergunta.descricaoPergunta,
