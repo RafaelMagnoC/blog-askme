@@ -1,6 +1,8 @@
 import express from "express";
 import { engine } from "express-handlebars";
-import router from "./routes/router.js";
+import home from "./routes/home/home.routes.js";
+import asks from "./routes/asks/asks.routes.js";
+import answer from "./routes/answer/answers.routes.js";
 import connection from "./database/dbConnection.js";
 
 const app = express();
@@ -13,6 +15,8 @@ app.engine("handlebars", engine({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 app.set("views", "src/views");
 
-app.use(router);
+app.use(home);
+app.use(asks);
+app.use(answer);
 
 export default app;

@@ -1,0 +1,15 @@
+<div class="container mt-4">
+  {{#each perguntas}}
+    <div class="card mt-4">
+      <div class="card-header">
+        Date:
+        {{updatedAt}}
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">{{tituloPergunta}}</h5>
+        <p class="card-text">{{descricaoPergunta}}</p>
+        <a href="ask/{{id}}" class="btn btn-primary">Responder</a>
+      </div>
+    </div>
+  {{/each}}
+</div>

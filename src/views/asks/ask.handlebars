@@ -1,0 +1,35 @@
+<div class="container mt-4">
+  <div class="card">
+    <div class="card-header">
+      Date: {{updatedAt}}
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">{{tituloPergunta}}</h5>
+      <p class="card-text">{{descricaoPergunta}}</p>
+    </div>
+    <form method="post" action="/responder" class="form-control">
+      <h3>Responda</h3>
+      <textarea
+        placeholder="Digite sua resposta"
+        class="form-control"
+        name="descricaoResposta"
+      ></textarea>
+      <input type="hidden" name="perguntaId" value="{{idPergunta}}"/>
+      <button type="submit" class="btn btn-primary mt-3">Responder</button>
+    </form>
+  </div>
+  <hr>
+  <h3>Respostas</h3>
+  {{#each resposta}}
+    <div class="card mt-3">
+      <div class="card-header">
+        Date:
+        {{updatedAt}}
+      </div>
+      <div class="card-body">
+        <p class="card-text">{{descricaoResposta}}</p>
+      </div>
+    </div>
+    <hr>
+  {{/each}}
+</div>
